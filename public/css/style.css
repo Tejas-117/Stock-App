@@ -1,0 +1,329 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body{
+   position: relative;
+}
+
+/* ------------index page styling------------- */
+.top-section{
+   background: url(../images/image1.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   width: 100%;
+   height: 70vh;
+   color: white;
+   position: relative;
+}
+.top-text {
+   position: absolute;
+   top: 25%;
+   left: 10%;
+   max-width: 50vw;
+   font-size: 2.5rem;
+   text-align: left;
+   padding: 1rem ;
+   border: 2.5px solid white;
+} 
+.mid-section {
+   padding: 2rem 10vw;
+} 
+#form{
+   width: 60vw;
+}
+
+@media only screen and (max-width: 900px) {
+   .top-text {
+      max-width: 70vw;
+   }
+   .mid-section div {
+      font-size: 0.8rem;
+   }
+   #form {
+      width: 80vw;
+   }
+}
+@media only screen and (max-width: 600px) {
+   .top-text {
+      top: 15%;
+      font-size: 2pc;
+   }
+}
+
+/*------------- data rendering page styling ---------------*/
+.some-section{
+   padding: 1rem 3rem;
+   text-align: center;
+}
+
+.disclaimer{
+   background-color: rgba(236, 234, 108, 0.342);
+   border-left: 3px solid yellow;
+}
+.disclaimer h6{
+   display: inline;
+   color: red;
+}
+
+/* data card styling */
+.data-card{
+   padding: 1rem ;
+   border-radius: 3px;
+   box-shadow: -2px 3px 39px -25px rgba(0,0,0,1);
+}
+.horizontal-line{
+   display: block;
+   width: 65%;
+   margin: 1rem auto;
+   border-style: none;
+   border-top: 4px dashed grey;
+}
+.datetime{
+   margin: 15px 0 25px 30vw;
+}
+.symbol,.stock-price{
+   width: 100%;
+}
+.symbol h2,.stock-price h2{
+   display: inline;
+   margin: 0.5rem 2rem 0.5rem 3rem;
+}
+.exchange, .currency{
+   display: inline-block;
+   margin: 0.8rem 1rem;
+}
+.exchange>.value, .currency>.value{
+   font-size: 1.3rem;
+}
+
+/* chart section */
+.chart-heading {
+   margin-top: 4rem;
+}
+.chartContainer{
+   position: relative;
+   margin-bottom: 2rem;
+}
+.hide{
+   display: none;
+}
+
+/* news section */
+.wrapper{
+   height: 80vh;
+   margin: 0 auto;
+   margin-top: 5rem;
+   border: 1.5px solid rgb(80, 79, 79);
+   overflow-y: scroll;
+   overflow-x: hidden;
+   padding: 1rem;
+}
+.cards{   
+   display: flex;
+   width: 80%;
+   flex-direction: row;
+   margin: 3rem auto;
+   padding: 1rem;
+   box-shadow: -2px 3px 39px -25px rgba(0,0,0,1);
+}
+.cards:hover {
+   transform: scale(1.02);
+}
+.title a{
+   text-decoration: none;
+   color: rgb(77, 105, 200);
+   font-size: 1rem;
+}
+a:hover{
+   text-decoration: underline;
+}
+.info{
+   text-align: left;
+   margin-left: 1.6rem;
+}
+.description{
+   font-size: 0.8rem;
+}
+.timeStamp{
+   font-size: 0.7rem;
+   display: inline-block;
+   color: rgb(243, 240, 240);
+   background-color: rgb(155, 155, 155);
+   margin: 0;
+   padding: 5px 10px;
+   border-radius: 10px;
+}
+.imageContainer {
+   margin: auto 0;
+}
+.articleImage{
+   width: 250px;
+   margin-right: 1rem;
+}
+.divideLine{
+   display: block;
+   width: 35%;
+   margin: 1rem auto;
+   border-style: none;
+   border-top: 5px dotted grey;
+}
+
+
+@media  screen and (max-width: 800px) {/*for tablets*/
+   /* data-card styling */
+   .some-section {
+      padding: 1rem;
+   }
+   .datetime{
+      margin: 0;
+      font-size: 3vw;
+   }
+   .symbol h2,.stock-price h2 {
+      margin: 0;
+      font-size: 5vw;
+      margin-bottom: 100px;
+   }
+   .change {
+      display: block;
+      width: 100%;
+      margin: 1rem auto 0 0;
+   }
+   .exchange, .currency {
+      display: block;
+      margin: 0;
+      font-size: 4vw;
+   }
+   .exchange>.value, .currency>.value {
+      font-size: 4vw;
+   }
+   
+   /* news section */
+   .cards{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+   }
+   .title  {
+      font-size: 0.8rem;
+      margin-top: 15px;
+   }
+   .articleImage {
+      margin-right: 0;
+   }
+   .info{
+      text-align: center;
+   }
+   .description {
+      line-height: 1.3;
+   }
+
+   /* history data styling */
+   .historyData h3 {
+      font-size: 4vw;
+   }
+}
+
+@media  screen and (max-width: 500px) {/* for mobiles */
+   .datetime {
+      font-size: 5vw;
+   }
+   .symbol h2,.stock-price h2 {
+      font-size: 7vw;
+   }
+   .exchange, .currency {
+      font-size: 4vw;
+   }
+   .exchange>.value, .currency>.value {
+      font-size: 6vw;
+   }
+
+
+   .info {
+      margin-left: 0;
+   }
+   .articleImage {
+      width: 150px;
+   }
+   .title a {
+      font-size: 0.8rem;
+   }
+   .description {
+      font-size: 0.6rem;
+   }
+
+   .fromDate, .toDate{
+      display: block;
+      margin: 0 ;
+   }
+   .historyData h3 {
+      font-size: 6vw;
+   }
+}
+
+@media only screen and (min-width: 1200px) {
+   .chartContainer{
+      margin: 3rem auto 5rem;
+      max-width: 70vw;
+   }
+}
+
+/*------------- failure page styling ------------*/
+.failure-section {
+   height: 100vh;
+   width: 100%;
+   padding: 1rem 2rem;
+   overflow-x: none;
+}
+.failure {
+   text-align: center;
+   display: block;
+   margin: auto;
+}
+.link {
+   text-decoration: none;
+   color: white;
+}
+.link:hover {
+   text-decoration: none;
+}
+#backToHome {
+   display: block;
+}
+
+/* ---------------partials styling ----------*/
+.navbar-brand {
+   margin-left: 8vw;
+}
+.footer-padding{
+   width: 100%;
+   padding-top: 100px;
+}
+footer{
+   position: absolute;
+   left: 0%;
+   bottom: 0;
+   width: 100%;
+   background-color: #212529;
+   color: white;
+   text-align: center;
+   padding: 1rem 0;
+   margin: 0;
+}
+.footer-link {
+   text-decoration: none;
+   color: gray;
+}
+.footer-link:hover {
+   text-decoration: underline;
+   color: gray;
+}
+
+@media screen and (max-width: 900px) {
+   .navbar-brand {
+      margin: 0 auto;
+   }
+}

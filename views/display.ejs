@@ -1,0 +1,77 @@
+<%- include('partials/header') %>
+  <section class="some-section">
+
+    <!-- top-section -->
+    <div class="disclaimer container my-4 py-1">
+      <p class="note">
+        <h6>Note :</h6>
+        The stock information provided is for informational purposes only and is not intended for trading purposes.
+         The stock information are provided by a third-party sevice.
+      </p>
+    </div>
+
+    <div class="data-card">
+      <h1 class="company-name"><%= data.name  %></h1>
+      <div class="horizontal-line"></div>
+      
+      <span class="datetime"><%= data.datetime + ' GMT' %></span>
+
+      <div class="symbol">
+        <h2 class="key">Symbol</h2>-
+        <h2 class="value" name="symobl" value=<%= data.symbol %>><%= data.symbol %></h2>
+      </div>
+
+      <div class="stock-price">
+        <h2 class="key">(Stock) Price</h2>-
+        <h2 class="value"><%= '$' + parseFloat(data.close).toFixed(2) %></h2>
+      </div>
+      
+      <div class="exchange">
+        <span class="key">Exchange</span>-
+        <span class="value"><%= data.exchange %></span>
+      </div>
+
+      <div class="currency">
+        <span class="key">Currency</span>-
+        <span class="value"><%= data.currency %></span>
+      </div>            
+    </div>
+    
+    <!-- chart section -->
+    <h2 class="chart-heading">PRICE - CHART</h2>
+    <div class="divideLine"></div>
+    <div class="chartContainer">
+      <canvas id="myChart"></canvas>
+   </div>
+
+    <!-- news section -->
+    <div class="wrapper">
+      <h2>COMPANY NEWS</h2>
+      <div class="divideLine"></div>
+      <% allNews.forEach(news => {%>
+        <div class="cards">
+            <div class="imageContainer">
+              <img class="articleImage" src="<%= news.urlToImage %>" alt="thumbnail">
+            </div>
+            <div class="info">
+              <h4 class="title"><a class="articleLink" href="<%= news.url %>"><%= news.title %></a></h4>
+              <p class="description">
+                  <%= news.description.substring(0,200) + "...." %>
+                  <a href="<%= news.url %>">Read more</a>
+              </p>
+              <span class="timeStamp"><%= news.publishedAt.substring(0,10) %></span>
+            </div>         
+        </div>               
+      <% }); %>
+    </div>    
+  </section> 
+
+  <script>
+    const chartData = JSON.parse('<%= chart %>'.replaceAll('&#34;', '"'));
+  </script>
+
+   <!-- chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>  
+  <script src="js/script.js"></script>
+
+<%- include('partials/footer') %>

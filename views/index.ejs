@@ -1,0 +1,39 @@
+    <%- include('partials/header') %>
+    <section class="top-section">
+      <div class="top-text animate__animated animate__bounceIn">
+        PLACE TO GET YOUR STOCK INFO
+      </div>
+    </section>
+
+    <section class="mid-section">
+      <div class="some-info">
+        <h5><b>Introduction</b></h5>
+        <p>This is a simple website that renders some data about particular <u>stock(US)/forex/crypto</u> entered below by the user.
+          The data rendered includes :
+          <ul>
+            <li>Basic info about a company's stock (delayed by one minute)</li>
+            <li>Recent news about the company (which could potentially contribute for the stock price)</li>
+            <li>Historical Data of the respective company's stock</li>
+          </ul>
+        </p>
+      </div>
+
+      <div>
+        The format to lookup data is as follows :
+        <ul>
+          <li>For companys :- <i>AAPL,AMZN</i>...</li>
+          <li>For crytpo :- <i>BTC/USD, ETH/USD, DOGE/USD</i>...</li>
+          <li>For forex :- <i>USD/EUR, INR/USD</i>...</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- a form to take input form the user; -->
+    <form action="/display" method="POST" class="mx-auto pt-3" id="form">
+      <div class="input-group">
+        <input type="text" class="form-control" name="symbol" placeholder="~Enter symbol to get data" required>
+      </div>
+      <button type="submit" name="button" class="btn btn-secondary mt-3 animate_animated animate__bounceInDown">Search</button>  
+    </form>
+
+    <%- include('partials/footer') %>

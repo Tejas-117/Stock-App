@@ -1,0 +1,26 @@
+{
+  "name": "stock-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "devStart": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "Tejas",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "serve-favicon": "^2.5.0"
+  },
+  "engines": {
+    "node": "16.13.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
