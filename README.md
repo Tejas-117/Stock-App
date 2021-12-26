@@ -1,3 +1,5 @@
+Issue with deployment, [NEWS API](https://newsapi.org/) allows only for development in free tier.
+
 # Stock info web-app
 
 ## Table of contents
