@@ -27,7 +27,7 @@ It renders basic data such as:
 
 ### Built with
 
-- Semantic HTML5 markup
+- HTML5 Markup / EJS
 - CSS custom properties
 - Bootstrap
 - Javascript
