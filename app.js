@@ -40,9 +40,9 @@ app.post("/display", async (req,res) => {
 
     
       try {
-        stockData = await getData(URL1);
-        news = await getData(URL2);
-        chartData = await getData(URL3);
+        stockData = await getData(URL1, null);
+        news = await getData(URL2, req.headers['user-agent']);
+        chartData = await getData(URL3, null);
       } catch (error) {
         return res.send('Internal error in fetching data, Try again!!');
       }
@@ -56,9 +56,14 @@ app.listen(process.env.PORT || 3000, () => {
 })
 
 // function to make https request;
-function getData(URL) {
+function getData(URL, userAgent) {
   return new Promise ((resolve, reject) => {
-   https.request(URL, response => {//using `response` to differ from `res`;
+
+   const options = {
+    headers: { 'User-Agent': userAgent }
+   }
+
+   https.request(URL, options, response => {//using `response` to differ from `res`;
              
      let body = [];
        response.on('data', (chunk) => {
